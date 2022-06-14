@@ -129,31 +129,18 @@ function searchCheck1() {
             <dl>
                 <dt>감독 :&nbsp;</dt>
                 <dd>
-                    
-                        
                         <span>${movie.m_director}</span>                    
-                        
                 </dd>
-                
-
                 <dt>&nbsp;/ 배우 :&nbsp;</dt>
                 <dd class="on">
-                    
-                        
                         <span>${movie.m_actor}</span>                    
-                        
                 </dd>
-
                 <dt>장르 :&nbsp;${movie.m_genre}</dt> 
                 <dd></dd>
                 <dt>&nbsp;/ 기본 :&nbsp;</dt>
                 <dd class="on">${movie.m_grade}세 이상, ${movie.m_time}분, ${movie.m_intro}</dd>
                 <dt>개봉 :&nbsp;</dt>
                 <dd class="on">${movie.m_date}</dd>
-
-
-            
-
             </dl>
         </div>
         <span class="screentype">
