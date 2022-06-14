@@ -41,7 +41,7 @@ public class Res_movie_Controller {
         return "reserve/reserve";
     }
     
-  //°áÁ¦ ¿Ï·á ÈÄ ¸ÞÀÎ ÆäÀÌÁö ÀÌµ¿
+  //to MainPage after payment
     @RequestMapping("seats/main")
     public String nextt(){
         return "main/index";
@@ -72,19 +72,18 @@ public class Res_movie_Controller {
         response.setHeader("Content-Type","text/html;charset=utf-8");
         SeatService = appConfig.seatService();
         dao = appConfig.dao();
-        String Mname = req.getParameter("SresultName");  //¿µÈ­ Á¦¸ñ
-        String Tname = req.getParameter("SresultTheater"); //¿µÈ­°ü ¸í
-        String Rname = req.getParameter("SresultRegion"); //Áö¿ª ¸í
-        String Mcode = req.getParameter("SresultNameCode"); //¿µÈ­ ÄÚµå
-        String Sdate = req.getParameter("SresultDate"); //¼±ÅÃ ³¯Â¥
-        String Shall = req.getParameter("SresultHall"); //»ó¿µ°ü ¹øÈ£
-        String Stime = req.getParameter("SresultTime"); //¿µÈ­ ½Ã°£
-        String Tcode = req.getParameter("SresultTheaterCode"); //¿µÈ­°ü ¹øÈ£
+        String Mname = req.getParameter("SresultName");  //ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½
+        String Tname = req.getParameter("SresultTheater"); //ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½
+        String Rname = req.getParameter("SresultRegion"); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+        String Mcode = req.getParameter("SresultNameCode"); //ï¿½ï¿½È­ ï¿½Úµï¿½
+        String Sdate = req.getParameter("SresultDate"); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â¥
+        String Shall = req.getParameter("SresultHall"); //ï¿½ó¿µ°ï¿½ ï¿½ï¿½È£
+        String Stime = req.getParameter("SresultTime"); //ï¿½ï¿½È­ ï¿½Ã°ï¿½
+        String Tcode = req.getParameter("SresultTheaterCode"); //ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½È£
         MovieMemory mm = new MovieMemory(Tcode, Mname, Tname, Rname, Sdate, Shall, Stime, Mcode);
         model.addAttribute("ReserveDetail",mm);
         SeatService.findAllSeats(Mcode, Sdate, Stime, Tcode, model);
 
-        //Á¶Á¶ ¿µÈ­ ¿©ºÎ È®ÀÎ
         int jVali = SeatService.findJvalidation(Shall, Stime);
 
         ArrayList<Integer> priceList = SeatService.findPriceInfo(jVali);

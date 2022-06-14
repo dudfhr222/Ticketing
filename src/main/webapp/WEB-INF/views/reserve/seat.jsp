@@ -101,7 +101,6 @@
             <script>
                 
             </script>
-
             <div class="box-pay">
                 <div class="box-pay-info">
                     <table>
