@@ -55,7 +55,7 @@
             <%
                 String id = (String) session.getAttribute("u_id");
             %>
-            <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/seatSelect.js"/>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/Seat/seatSelect.js"/>
              <script>
             </script>
             <div class="box-payinfo">
@@ -97,7 +97,7 @@
                     </div>
                 </div>
             </div>
-             <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/seatAjax.js"/>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/Seat/seatAjax.js"/>
             <script>
                 
             </script>
